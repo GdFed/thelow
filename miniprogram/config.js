@@ -25,30 +25,4 @@ export default {
         s = s < 10 ? '0' + s : s;
         return `${y}-${m}-${d} ${h}:${min}:${s}` 
     },
-    // sendMsg(params){
-    //     wx.request({
-    //         url: `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx58f984ee339d8d54&secret=1de7409a53b7ba2e2540ad21844c424f`,
-    //         success(ret){
-    //           let data = {
-    //             touser: params.openid,
-    //             template_id: params.templateid,
-    //             page: params.page,
-    //             form_id: params.formid,
-    //             data: params.formdata,
-    //             emphasis_keyword: 'keyword1.DATA'
-    //           }
-    //           wx.request({
-    //               url: `https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=${ret.data.access_token}`,
-    //               method: "POST",
-    //               header: {
-    //                   "content-type": "application/json",
-    //               },
-    //               data,
-    //               success(res){
-    //                 console.log(res)
-    //               }
-    //           }) 
-    //         }
-    //       })
-    // }
 }
