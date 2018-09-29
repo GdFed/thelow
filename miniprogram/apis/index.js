@@ -3,7 +3,7 @@ var QQMapWX = require('./qqmap-wx-jssdk.min.js');
  
 // 实例化API核心类
 var qqMap = new QQMapWX({
-    key: 'ZYQBZ-27RKG-JW6Q6-IWA2I-IJA2S-QKFN4' // 必填
+    key: 'GDKEY' // 必填
 });
 export default {
     func(name, data){
