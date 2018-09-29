@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="top">
+        <view class="new">最新</view>
+        <view class="self">我的</view>
+    </view>
+    <view class="sweethings">
+        <view class="seething" wx:for="{{sweethings}}">
+
+        </view>
+    </view>
+</view>

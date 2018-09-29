@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="nothing">
+    <image class="bg" mode="aspectFill" src="{{logoImg}}" />
+    <view class="inner">
+        <view class="thing">和你的100个愿望清单</view>
+        <view class="addr">深圳</view>
+        <view class="time">2018.9.20</view>
+        <view class="line">----------------------------</view>
+        <view class="txt">爱情里最浪漫的一件事儿，无非是你在闹，他在笑，如此温暖过一生。每一对恋人都有很多相处的琐事，哪怕再小的事，因为有你，温暖而甜蜜……</view>
+    </view>
+</view>

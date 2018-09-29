@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="aboutus">
+    <view class="title">关于我们</view>
+    <view class="cont">做自己喜欢的，美女与野猪工作室</view>
+    <view class="rule">小程序内容和图片源自网络，如有侵权请联系后台</view>
+    <view class="rule">针对小程序内容的最终解释权归美女与野猪工作室所有</view>
+</view>

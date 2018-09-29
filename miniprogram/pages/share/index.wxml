@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="edit" bindtap="goToEdit" wx:if="{{sameopenid}}"><image src="../../images/edit_w.svg" /></view>
+    <view class="cont" wx:if="{{thing}}">
+        <image wx:if="{{thing.picaddr}}" class="banner" src="{{thing.picaddr}}" mode="aspectFill"/>
+        <image wx:else class="banner" src="{{logoImg}}" mode="aspectFill"/>
+        <view class="info">
+            <view class="tag"><image src="../../images/tag.svg" /><view>{{thing.id}}</view></view>
+            <view class="avatar"><image src="{{avatarUrl}}" /></view>
+            <view class="thing">{{thing.thing}}</view>
+            <view class="wordsline-t"></view>
+            <view class="base">
+                <view class="time">
+                    <view class="title">日期:</view>
+                    <view class="cont">{{thing.donetime}}</view>
+                </view>
+                <view class="addr">
+                    <view class="title">地点:</view>
+                    <view class="cont">{{thing.doneaddr[0]}} {{thing.doneaddr[1]}}</view>
+                </view>
+            </view>
+            <view class="words">
+               <view class="inner">
+                    {{thing.txt}}
+               </view>
+            </view>
+            <view class="wordsline-b"></view>
+            <!-- 幸福值 -->
+            <view class="happy">
+                <view class="title">幸福感</view>
+                <view class="star">
+                    <block wx:for="{{stars}}">
+                    <image class="star-image" style="left: {{item*40}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+                        <view class="item" style="left:0rpx" data-key="{{item+0.5}}"></view>
+                        <view class="item" style="left:75rpx" data-key="{{item+1}}"></view>
+                    </image>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer" catchtap="none;">
+        <view class="title">
+            <view class="line"></view>
+            <view class="txt">分享属于 我们的 美好时光</view>
+            <view class="line"></view>
+        </view>
+        <div class="btn">
+            <button wx:if="{{sameopenid}}" open-type='share' plain>
+                <image src="../../images/wechat.svg" mode="aspectFill"/>
+            </button>
+            <button wx:else bindtap="wechatShare" plain>
+                <image src="../../images/wechat.svg" mode="aspectFill"/>
+            </button>
+            <button plain bindtap="wechatzoneShare">
+                <image src="../../images/wechatzone.svg" mode="aspectFill"/>
+            </button>
+        </div>
+    </view>
+    <canvas canvas-id="share-canvas" style="opacity: 0;position: absolute;top: -9999px;left: -9999px;width: 750rpx;height: 1360rpx;"></canvas>
+</view>

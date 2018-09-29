@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="avatar"
+    ><image src="{{avatarUrl}}" /></button>
+    <!-- <view class="nickname"><open-data type="userNickName" /></view>
+    <view class="avatar"><open-data type="userAvatarUrl" /></view> -->
+  </view>
+  <!-- 许愿池 -->
+  <navigator class="wall" url="../wall/index">
+    <view class="inner">池</view>
+  </navigator>
+
+  <view class="load"wx:if="{{!things.length}}">
+    <image src="../../images/loading.gif" alt="" />
+  </view>
+  <view class="things" wx:else>
+    <view class="card" catchtap="goThing" wx:for="{{things}}" data-index="{{index}}">
+        <form bindsubmit="formSubmit" report-submit>
+          <button formType="submit" plain>
+            <view class="done" wx:if="{{item.done}}"><image src="../../images/success.svg" /></view>
+            <view class="inner">
+                {{item.thing}}
+            </view>
+          </button>
+        </form>
+    </view>
+  </view>
+  <view class="bottom" wx:if="{{bottomStatus}}">我也是有底线的~</view>
+</view>

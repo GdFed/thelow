@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <view class="avatar"><open-data type="userAvatarUrl" /></view>
+        <view class="nickname"><open-data type="userNickName" /></view>
+    </view>
+    <view class="sweethings">
+        <view class="finish item">
+            <view class="title">
+                已完成
+            </view>
+            <view class="cont">
+                {{finish}}件
+            </view>
+        </view>
+        <view class="happysum item">
+            <view class="title">
+                幸福指数
+            </view>
+            <view class="cont">
+                {{happysum}}分
+            </view>
+        </view>
+        <view class="max item" bindtap="switchPage">
+            <view class="title">
+                最开心的事
+            </view>
+            <view class="cont" wx:if="{{maxhappy}}">
+                No.{{maxhappy.id || 0}}
+            </view>
+            <view class="cont" wx:else>
+                很遗憾没有~
+            </view>
+        </view>
+    </view>
+    <view class="maxhappy" wx:if="{{newhappy}}" bindtap="goToNew">
+        <view class="new">
+            <image src="../../images/new.png" />
+        </view>
+        <image wx:if="{{newhappy.picaddr}}" class="bg" mode="aspectFill" src="{{newhappy.picaddr}}" />
+        <image wx:else class="bg" mode="aspectFill" src="{{logoImg}}" />
+        <view class="inner">
+            <view class="thing">{{newhappy.thing}}</view>
+            <view class="addr">{{newhappy.doneaddr[0]}} {{newhappy.doneaddr[1]}}</view>
+            <view class="time">{{newhappy.donetime}}</view>
+            <view class="line">----------------------------</view>
+            <view class="txt">{{newhappy.txt}}</view>
+        </view>
+    </view>
+    <view class="nothing" wx:else>
+        <no-thing></no-thing>
+    </view>
+    <aboutus></aboutus>
+    <button plain class="cusser" open-type="contact"><image src="../../images/cusser.svg" /></button>
+</view>

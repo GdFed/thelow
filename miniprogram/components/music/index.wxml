@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="{{showMusicStatic?'music show':'music'}}">
+    <image class="{{bgmPlay?'now-play':'now-stop'}}" bindtap="showMusic" wx:if="{{!showMusicStatic}}"  src="../../images/music.svg" />
+    <view class="show" wx:else>
+        <image class="play" bindtap="play" wx:if="{{!bgmPlay}}" src="../../images/play.svg" />
+        <image class="pause" bindtap="play" wx:else src="../../images/pause.svg" />
+        <image bindtap="cut" src="../../images/cut.svg" />
+        <view class="title"><view class="inner">{{playMusic.title}}</view></view>
+        <image bindtap="hideMusic" src="../../images/arrowright.svg" />
+    </view>
+</view>

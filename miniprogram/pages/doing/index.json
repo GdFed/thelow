@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "记录点滴",
+    "usingComponents": {
+      "toptip": "../../components/toptip/index"
+    }
+  }

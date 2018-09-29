@@ -1,0 +1,23 @@
+/**index.wxss**/
+.aboutus{
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 96rpx 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.aboutus .title{
+  font-size: 28rpx;
+  color: #333;
+  padding-bottom: 12rpx;
+}
+.aboutus .cont{
+  font-size: 30rpx;
+  color: #2b2b2b;
+}
+.aboutus .rule{
+  font-size: 20rpx;
+  color: #666;
+}

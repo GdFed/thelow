@@ -1,0 +1,81 @@
+<!--index.wxml-->
+<view class="container">
+   <music></music>
+    <view class="tips" wx:if="{{tipsShow}}"><view>所填内容部分保存后不能修改(有需联系我们),请认真填写哦~</view><image bindtap="closeTips" src="../../images/delete_w.svg" /></view>
+    <view class="divline" wx:if="{{tipsShow}}"></view>
+    <view class="event item">
+        <view class="title">事件</view>
+        <view class="cont" wx:if="{{thing.id}}">
+            No.{{thing.id}} {{thing.thing}}
+        </view>
+    </view>
+    <view class="time item">
+        <view class="title">日期</view>
+        <view class="cont">
+            <picker mode="date" value="{{time}}" disabled="{{!editStatus}}" bindchange="bindTimeChange">
+                <view class="picker">
+                <image src="../../images/time.svg" /> {{time}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="addr item">
+        <view class="title">地点</view>
+        <view class="cont">
+            <picker mode="region" bindchange="bindRegionChange" disabled="{{!editStatus}}" value="{{region}}">
+                <view class="picker">
+                <image src="../../images/address.svg" /> {{region[0]}}，{{region[1]}}，{{region[2]}}
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="happy item">
+        <view class="title">幸福值</view>
+        <view class="cont">
+            <slider wx:if="{{editStatus}}" max="10" block-size="16" show-value bindchange="sliderChange" value="{{happy}}" />
+            <slider wx:else max="10" block-color="#5ed57f" block-size="12" activeColor="#5ed57f" show-value bindchange="sliderChange" disabled value="{{happy}}" />
+        </view>
+    </view>
+    <view class="words item">
+        <view class="title">感想</view>
+        <view class="cont">
+            <textarea placeholder="请输入不超过200字的感想吧~" maxlength="200" placeholder-style="color: #aaa;" bindblur="textareaBlur" wx:if="{{editStatus}}" value="{{txt}}"/>
+            <view wx:else>
+                <view class="txt-have" wx:if="{{txt}}">
+                    {{txt}}
+                </view>
+                <view class="no-cont" wx:else>
+                    您还没有感想哦，点击编辑赶紧记录点滴吧~
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="photos item">
+        <view class="title">时光 <view wx:if="{{editStatus}}" class="picedit">(图片编辑会立即生效，请慎重操作)</view></view>
+        <view class="cont">
+            <view class="photos" wx:if="{{photos}}">
+                <view class="img">
+                    <image class="del" bindtap="delPic" wx:if="{{editStatus}}" src="../../images/del.svg"/>
+                    <image class="show-pic" mode="aspectFill" src="{{photos}}" />
+                </view>
+            </view>
+            <view class="no-cont" wx:if="{{!editStatus && !photos}}">您还没有时光哦，点击编辑赶紧记录点滴吧~</view>
+            <view class="add-pic" wx:if="{{editStatus && !photos}}">
+                <image src="../../images/add.svg" bindtap="addPic" />
+                <view class="tip">注意:请确保本地图片缓存完成</view>
+            </view>
+        </view>
+    </view>
+    <view class="wall item">
+        <view class="title">授权许愿池</view>
+        <view class="cont">
+            <switch disabled="{{!editStatus}}" checked="{{wallshow}}" bindchange="switchChange"/>
+        </view>
+    </view>
+    <view class="control">
+        <button class="edit-all" bindtap="editAll" wx:if="{{!editStatus}}">编辑</button>
+        <form bindsubmit="formSubmit" wx:else report-submit>
+            <button class="save" bindtap="save" formType="submit">保存</button>
+        </form>
+    </view>
+</view>

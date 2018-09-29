@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="toptip">
+    <view class="tips" wx:if="{{tipsShow}}"><view>所填内容部分保存后不能修改(有需请联系客服),请认真填写哦~</view><image bindtap="closeTips" src="../../images/delete_w.svg" /></view>
+    <view class="divline" wx:if="{{tipsShow}}"></view>
+</view>

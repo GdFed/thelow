@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "",
+    "disableScroll": true,
+    "usingComponents": {
+      "aboutus": "../../components/aboutus/index",
+      "no-thing": "../../components/nothing/index"
+    }
+  }

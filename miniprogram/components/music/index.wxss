@@ -1,0 +1,49 @@
+/**index.wxss**/
+.music{
+  background: #fff;
+  position: fixed;
+  z-index: 999;
+  top: 100rpx;
+  right: 0;
+  box-shadow:0 4rpx 8rpx 0 rgba(43,45,46,.16);
+  border-radius:40rpx 0 0  40rpx;
+  min-width: 80rpx;
+  height: 80rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 1s;
+}
+.music image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.music.show{
+  width: 400rpx;
+}
+.music .show{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.music .show .title{
+  overflow: hidden;
+  width: 200rpx;
+}
+.music .show .title .inner{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+  text-align: center;
+  margin: 0 -50%;
+  white-space: nowrap;
+  color: #2b2b2b;
+  animation: translate 12s linear infinite alternate;
+}
+.now-play{
+  animation: rotate 5s linear infinite;
+}
+.now-stop{
+  animation: none;
+}

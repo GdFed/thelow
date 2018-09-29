@@ -1,0 +1,30 @@
+/**index.wxss**/
+.toptip{
+  /* width: 750rpx;
+  height: 40rpx; */
+}
+.tips{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* box-shadow:0 4rpx 8rpx 0 rgba(43,45,46,.16); */
+  background: lightblue;
+  /* opacity: .8; */
+  font-size: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.divline{
+  width: 750rpx;
+  height: 40rpx;
+}
+.tips image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}

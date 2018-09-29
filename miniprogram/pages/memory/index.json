@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "点滴重现",
+    "usingComponents": {
+      "music": "../../components/music/index"
+    }
+  }
